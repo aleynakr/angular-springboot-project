@@ -1,0 +1,129 @@
+<div class="container">
+  <h2>{{ title }}</h2>
+  <form name="myForm" #myForm="ngForm">
+    <div class="row">
+      <label for="fname">Sicil No</label>
+      <input
+        type="text"
+        id="fname"
+        name="fname"
+        class="form-control col-md-4"
+        [(ngModel)]="searchSicil_no"
+      />
+    </div>
+    <br />
+    <div class="row">
+      <label for="lname">Tc Kimlik No</label>
+      <input
+        type="text"
+        id="lname"
+        name="lname"
+        class="form-control col-md-4"
+        [(ngModel)]="searchKimlik_no"
+      />
+    </div>
+    <br />
+    <div class="row">
+      <label for="fname">Adı</label>
+      <input
+        type="text"
+        id="fname"
+        name="fname"
+        class="form-control col-md-4"
+        [(ngModel)]="searchAdi"
+      />
+    </div>
+    <br />
+    <div class="row">
+      <label for="lname">Soyadı</label>
+      <input
+        type="text"
+        id="lname"
+        name="lname"
+        class="form-control col-md-4"
+        [(ngModel)]="searchSoyadi"
+      />
+    </div>
+    <br />
+    <div  class="dropdown">
+      <button
+        class="btn btn-primary dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        aria-expanded="false"
+      
+      >
+        Dropdown button
+      </button>
+      <ul  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div>
+  
+
+    <br /><br />
+    <label for="lname">Ünvan</label>
+    <input type="text" id="lname" name="lname" />
+    <button  class="btn btn-sm dropdown-toggle" data-bs-toggle="dropdown">
+    </button>
+    <label for="lname">Çalışma Durumu</label>
+    <input type="text" id="lname" name="lname" />
+    <button class="btn btn-primary btn-sm">
+      <i class="pi pi-chevron-down"></i>
+    </button>
+  </form>
+  <br />
+  <button type="button" class="btn btn-success" (click)="search()">
+    <i class="pi pi-search"></i> Ara
+  </button>
+  <button type="button" class="btn btn-info" (click)="this.myForm.resetForm()">
+    <i class="pi pi-times"></i> Temizle
+  </button>
+  <br />
+
+  <br />
+  <br />
+
+  <table class="text-align:center">
+    <thead>
+      <tr>
+        <th scope="col">Fotoğraf</th>
+        <th scope="col">Sicil No</th>
+        <th scope="col">Adı</th>
+        <th scope="col">Soyadı</th>
+        <th scope="col">Ünvan</th>
+        <th scope="col">Birim</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="
+          let employee of employeeList
+            | paginate: { itemsPerPage: 4, currentPage: p }
+            | filter: searchText
+        "
+        class="center-align"
+      >
+        <td><img [src]="employee.fotograf" /></td>
+        <td >{{ employee.sicil_no }}</td>
+        <td>{{ employee.adi }}</td>
+        <td>{{ employee.soyadi }}</td>
+        <td>{{ employee.unvan }}</td>
+        <td>{{ employee.birim }}</td>
+        <td>
+          <button class="btn" (click)="openEdit(employee.id)">
+            <i class="pi pi-user-edit"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br /><br />
+  <pagination-controls
+    (pageChange)="p = $event"
+    class="float-center"
+  ></pagination-controls>
+</div>

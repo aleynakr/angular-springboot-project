@@ -1,0 +1,63 @@
+
+<h2>{{title}}</h2>
+<div >
+<form *ngIf="personel != null" >
+    <label for="sicil_no">Sicil No</label>
+    <input type="text" id="sicil_no" name="sicil_no"  value="{{personel.sicil_no}}"><br>
+     <img src="e.fotograf"/>
+    <input type="text" id="fotograf" name="fotograf"   >
+    <br><br>
+    <label for="kimlik_no">Tc Kimlik No</label>
+    <input type="number" id="kimlik_no" name="kimlik_no" value="{{personel.kimlik_no}}" ><br><br>
+    <label for="adi">Adı</label>
+    <input type="text" id="adi" name="adi" value="{{personel.adi}}">
+    <label for="soyadi">Soyadı</label>
+    <input type="text" id="soyadi" name="soyadi" value="{{personel.soyadi}}"><br><br>
+    <label for="baslama_trh">İşe Başlama Tarihi</label>
+    <input type="datetime" id="baslama_trh" name="baslama_trh" value="{{personel.baslama_trh}}"> 
+    <label for="ayrilis_trh">İşten Ayrılma Tarihi</label>
+    <input type="datetime" id="ayrilis_trh" name="ayrilis_trh" value="{{personel.ayrilis_trh}}"> <br><br>
+    <label for="ogr_drm">Öğrenim Durumu</label>
+    <input type="text" id="ogr_drm" name="ogr_drm" value="{{personel.ogr_drm}}"><br><br>
+    <label for="ozur_durum">Özür Durumu</label>
+    <input type="text" id="ozur_durum" name="ozur_durum" value="{{personel.ozur_durum}}"><br><br>
+    <label for="kurum">Geldiği Kurum</label>
+    <input type="text" id="kurum" name="kurum" value="{{personel.kurum}}"><br><br>
+    <label for="birim">Çalıştığı Birim</label>
+    <input type="text" id="birim" name="birim" value="{{personel.birim}}"><br><br>
+    <label for="cinsiyet">Cinsiyet</label>
+    <input type="text" id="cinsiyet" name="cinsiyet" value="{{personel.cinsiyet}}">
+    <label for="asker_drm">Askerlik Durumu</label>
+    <input type="text" id="asker_drm" name="asker_drm" value="{{personel.asker_drm}}"><br><br>
+    <label for="meslek_bilgisi">Görevi</label>
+    <input type="text" id="meslek_bilgisi" name="meslek_bilgisi" value="{{personel.meslek_bilgisi}}"><br><br>
+    <label for="sgk_no">Sigorta Numarası</label>
+    <input type="text" id="sgk_no" name="sgk_no" value="{{personel.sgk_no}}">
+    <label for="aylik_ucret">Aylık Ücret</label>
+    <input type="number" id="aylik_ucret" name="aylik_ucret" value="{{personel.aylik_ucret}}"><br><br>
+    <label for="sosyal_haklar">Sosyal Haklar</label>
+    <input type="text" id="sosyal_haklar" name="sosyal_haklar" value="{{personel.sosyal_haklar}}"><br><br>
+    <label for="es_calisma_drm">Eş Çalışma Durumu</label>
+    <input type="text" id="es_calisma_drm" name="es_calisma_drm" value="{{personel.es_calisma_drm}}">
+    <label for="cocuk_sayisi">Çocuk Sayısı</label>
+    <input type="number" id="cocuk_sayisi" name="cocuk_sayisi" value="{{personel.cocuk_sayisi}}"><br><br>
+    <label for="izin_hak">Hak ettiği izin</label>
+    <input type="text" id="izin_hak" name="izin_hak" value="{{personel.izin_hak}}">
+    <label for="ev_adresi">Ev Adresi</label>
+    <input type="text" id="ev_adresi" name="ev_adresi" value="{{personel.ev_adresi}}"><br><br>
+    <label for="telefon">Telefon</label>
+    <input type="tel" id="telefon" name="telefon" value="{{personel.telefon}}"><br><br>
+    <label for="izin_kullanilan">Kullandığı izin</label>
+    <input type="text" id="izin_kullanilan" name="izin_kullanilan" value="{{personel.izin_kullanilan}}"><br><br>
+    <p>Acil durumlarda haber verilecek kişinin</p><br><br>
+    <label for="acil_kisi">Adı Soyadı</label>
+    <input type="text" id="acil_kisi" name="acil_kisi" value="{{personel.acil_kisi}}">
+    <label for="acil_adres">Adres</label>
+    <input type="text" id="acil_adres" name="acil_adres" value="{{personel.acil_adres}}"><br><br>
+    <label for="acil_telefon">Telefon</label>
+    <input type="tel" id="acil_telefon" name="acil_telefon" value="{{personel.acil_telefon}}"><br><br>
+    <button>Güncelle</button>
+    <button>Sicil Özeti</button>
+    <button type="reset" (click)="goBack()">Geri</button>
+  </form>
+  </div>
